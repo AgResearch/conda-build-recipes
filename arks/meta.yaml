@@ -1,0 +1,31 @@
+package:
+  name: arks
+  version: "1.0.4"
+
+build:
+  number: 0
+
+source:
+  - git_url: git@github.com:bcgsc/arks.git
+    git_rev: bf0bc4e1af79a30bac38b0df8680fb4e04ca1225
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - automake
+    - boost
+    - sparsehash
+    - make
+     
+  run:
+    - links >=1.8
+
+test:
+  commands:
+    - "arks --help"
+
+about:
+  home: https://github.com/bcgsc/arks
+  license: GPLv3
+  summary: Scaffolding genome sequence assemblies using 10X Genomics GemCode/Chromium data.
+           This is a new kmer-based (alignment free) implementation of ARCS.
