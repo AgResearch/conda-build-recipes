@@ -1,0 +1,35 @@
+package:
+  name: kojak
+  version: "1.6.0"
+
+build:
+  number: 0
+  name: 5e9db1d
+
+source:
+  - git_url: git@github.com:mhoopmann/kojak.git
+    git_rev: 5e9db1d77c9f3db21f815b04002bc658188368a9 
+    folder: kojak
+  - git_url: git@github.com:mhoopmann/mstoolkit.git
+    git_rev: b41b33f508cce0b1e9715e2093efb044fa8d1636
+    folder: MSToolkit
+  - git_url: git@github.com:mhoopmann/hardklor.git
+    git_rev: 7dc42a869c2b3d3214e351981faef76465bace7b
+    folder: Hardklor
+  
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make
+
+
+test:
+  commands:
+    - "kojak | grep version"
+
+about:
+  home: http://kojak-ms.org/
+  license: Apache-2.0
+  summary: A database search algorithm for solving cross-linked peptide mass spectra.
