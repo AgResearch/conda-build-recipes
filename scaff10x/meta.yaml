@@ -1,0 +1,34 @@
+
+package:
+  name: scaff10x
+  version: "4.2"
+
+build:
+  number: 1
+  name: 0b7b044
+
+source:
+  - git_url: git@github.com:wtsi-hpag/Scaff10X.git
+    git_rev: 0b7b04423e830f96c46bebac0d17c27d0ac19b9b
+  
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - zlib
+    - make
+  
+  run:
+    - bwa
+    - smalt
+    - samtools
+
+
+test:
+  commands:
+    - "scaff10x | grep Version"
+
+about:
+  home: https://github.com/wtsi-hpag/Scaff10X
+  license: MIT License
+  summary: Pipeline for scaffolding and breaking a genome assembly using 10x genomics linked-reads.
