@@ -21,7 +21,8 @@ requirements:
   run:
     - bwa
     - smalt
-    - samtools
+    - pigz
+    - zlib
 
 
 test:
