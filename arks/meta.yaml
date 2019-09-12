@@ -3,7 +3,7 @@ package:
   version: "1.0.4"
 
 build:
-  number: 0
+  number: 4
 
 source:
   - git_url: git@github.com:bcgsc/arks.git
@@ -19,6 +19,10 @@ requirements:
      
   run:
     - links >=1.8
+    - bwa
+    - samtools
+    - make
+    - python
 
 test:
   commands:
