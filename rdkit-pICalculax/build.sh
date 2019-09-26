@@ -1,0 +1,10 @@
+export RDBASE=$PWD
+export PYROOT=$PREFIX
+mkdir build
+cd build
+cmake ../ -DRDK_INSTALL_INTREE=OFF -DRDK_INSTALL_STATIC_LIBS=OFF -DRDK_BUILD_CPP_TESTS=ON \
+-DPYTHON_NUMPY_INCLUDE_PATH=$PREFIX/lib/python2.7/site-packages/numpy/core/include \
+-DBOOST_ROOT=$PREFIX -D RDK_BUILD_CAIRO_SUPPORT=ON \
+-DCMAKE_INSTALL_PREFIX=$PREFIX
+make
+make install

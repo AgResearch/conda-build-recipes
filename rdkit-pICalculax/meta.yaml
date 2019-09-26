@@ -1,0 +1,44 @@
+package:
+  name: rdkit-picalculax
+  version: "Release_2017_09_2"
+
+build:
+  number: 1
+
+source:
+  - url: https://github.com/rdkit/rdkit/archive/Release_2017_09_2.tar.gz
+    sha256: 20b4d18bdeb457c95386bd2f6efad64321cb7f1dd885c0e630845933d1276a83
+    patches:
+      - atomic_data.cpp.patch
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+  host:
+    - boost 1.69.0
+    - boost-cpp 1.69.0
+    - cairo
+    - eigen
+    - numpy
+    - nox
+    - py-boost
+    - python 2.7
+    - pillow
+    - pkg-config
+  run:
+    - py-boost
+    - pandas
+    - pillow
+    - python 2.7
+
+test:
+  imports:
+    - rdkit
+
+about:
+  home: https://github.com/rdkit
+  license: BSD
+  summary: RDKit is a collection of cheminformatics and machine-learning software written in C++ and Python.
+           This is a patched distribution to support pICalculax.
